@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đăng Ký Tư Vấn | Vietnam TP Groupland</title>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --gold: #B8972A;
+            --gold-light: #D4AF37;
+            --dark: #1a1a1a;
+            --white: #fff;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background:
+                linear-gradient(rgba(0, 0, 0, .55),
+                    rgba(0, 0, 0, .65)),
+                url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1600&q=80') center/cover no-repeat;
+
+            min-height: 100vh;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            padding: 40px;
+        }
+
+        .consult-container {
+            width: min(1150px, 100%);
+            background: rgba(255, 255, 255, 0.98);
+
+            display: grid;
+            grid-template-columns: 1fr 1.1fr;
+
+            overflow: hidden;
+
+            box-shadow: 0 25px 80px rgba(0, 0, 0, .35);
+        }
+
+        /* LEFT */
+
+        .consult-left {
+            position: relative;
+
+            background:
+                linear-gradient(rgba(0, 0, 0, .55),
+                    rgba(0, 0, 0, .65)),
+                url('https://images.unsplash.com/photo-1568605114967-8130f3a36994?w=1200&q=80') center/cover no-repeat;
+
+            padding: 70px 55px;
+
+            color: white;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .consult-left::after {
+            content: "";
+
+            position: absolute;
+            inset: 0;
+
+            border: 1px solid rgba(255, 255, 255, .08);
+            pointer-events: none;
+        }
+
+        .consult-label {
+            font-size: 11px;
+            letter-spacing: .25em;
+            text-transform: uppercase;
+            color: var(--gold-light);
+            margin-bottom: 18px;
+            font-weight: 600;
+        }
+
+        .consult-left h1 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 64px;
+            line-height: 1;
+            margin-bottom: 24px;
+            font-weight: 500;
+        }
+
+        .consult-left p {
+            font-size: 14px;
+            line-height: 1.9;
+            color: rgba(255, 255, 255, .85);
+            max-width: 420px;
+        }
+
+        .consult-features {
+            margin-top: 40px;
+
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .consult-features span {
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: .12em;
+            font-weight: 600;
+        }
+
+        /* RIGHT */
+
+        .consult-right {
+            background: #fff;
+            padding: 55px 50px;
+        }
+
+        .form-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 42px;
+            color: var(--dark);
+            margin-bottom: 10px;
+        }
+
+        .form-subtitle {
+            font-size: 13px;
+            color: #777;
+            margin-bottom: 40px;
+            line-height: 1.7;
+        }
+
+        form {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 22px;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .full {
+            grid-column: 1 / 3;
+        }
+
+        label {
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: .15em;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin-bottom: 10px;
+        }
+
+        input,
+        select,
+        textarea {
+            border: 1px solid #e5e5e5;
+
+            padding: 16px;
+
+            font-family: 'Montserrat', sans-serif;
+            font-size: 14px;
+
+            outline: none;
+
+            transition: .25s;
+            background: #fff;
+        }
+
+        input:focus,
+        select:focus,
+        textarea:focus {
+            border-color: var(--gold);
+
+            box-shadow:
+                0 0 0 3px rgba(184, 151, 42, .08);
+        }
+
+        textarea {
+            resize: none;
+        }
+
+        .submit-btn {
+            grid-column: 1 / 3;
+
+            height: 58px;
+
+            border: none;
+
+            background: var(--gold);
+            color: white;
+
+            font-size: 13px;
+            font-weight: 700;
+
+            letter-spacing: .18em;
+            text-transform: uppercase;
+
+            cursor: pointer;
+
+            transition: .25s;
+        }
+
+        .submit-btn:hover {
+            background: #9a7d20;
+            transform: translateY(-2px);
+        }
+
+        .back-home {
+            position: absolute;
+            top: 25px;
+            left: 25px;
+
+            color: white;
+            text-decoration: none;
+
+            font-size: 12px;
+            letter-spacing: .15em;
+            text-transform: uppercase;
+
+            border-bottom: 1px solid rgba(255,255,255,.5);
+
+            padding-bottom: 3px;
+        }
+
+        .back-home:hover {
+            color: var(--gold-light);
+            border-color: var(--gold-light);
+        }
+
+        @media(max-width:950px) {
+
+            .consult-container {
+                grid-template-columns: 1fr;
+            }
+
+            .consult-left {
+                min-height: 350px;
+            }
+
+            form {
+                grid-template-columns: 1fr;
+            }
+
+            .full,
+            .submit-btn {
+                grid-column: auto;
+            }
+
+            .consult-left h1 {
+                font-size: 50px;
+            }
+        }
+
+        @media(max-width:600px) {
+
+            body {
+                padding: 0;
+            }
+
+            .consult-right {
+                padding: 40px 25px;
+            }
+
+            .consult-left {
+                padding: 50px 30px;
+            }
+
+            .form-title {
+                font-size: 34px;
+            }
+
+            .consult-left h1 {
+                font-size: 42px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="consult-container">
+
+        <!-- LEFT -->
+        <div class="consult-left">
+
+            <a href="index.html" class="back-home">
+                ← Trang Chủ
+            </a>
+
+            <p class="consult-label">
+                Vietnam TP Groupland
+            </p>
+
+            <h1>
+                Đăng Ký<br>
+                Tư Vấn
+            </h1>
+
+            <p>
+                Đội ngũ chuyên viên bất động sản cao cấp sẽ hỗ trợ bạn tìm kiếm
+                dự án phù hợp nhất với nhu cầu đầu tư, mua hoặc thuê.
+            </p>
+
+            <div class="consult-features">
+                <span>✔ Dự án cao cấp</span>
+                <span>✔ Hỗ trợ pháp lý & vay vốn</span>
+                <span>✔ Ưu đãi nội bộ độc quyền</span>
+                <span>✔ Chuyên viên tư vấn riêng</span>
+            </div>
+
+        </div>
+
+        <!-- RIGHT -->
+        <div class="consult-right">
+
+            <h2 class="form-title">
+                Tư Vấn Khách Hàng
+            </h2>
+
+            <p class="form-subtitle">
+                Vui lòng để lại thông tin để nhận tư vấn nhanh nhất
+                từ đội ngũ Vietnam TP Groupland.
+            </p>
+
+            <form id="consultForm">
+
+                <div class="form-group">
+                    <label>Họ và Tên</label>
+                    <input type="text" placeholder="Nguyễn Văn A" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Ngày Sinh</label>
+                    <input type="date" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Số Điện Thoại</label>
+                    <input type="tel" placeholder="09xxxxxxxx" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Email</label>
+                    <input type="email" placeholder="example@gmail.com">
+                </div>
+
+                <div class="form-group">
+                    <label>Nhu Cầu</label>
+                    <select>
+                        <option>Mua nhà</option>
+                        <option>Thuê nhà</option>
+                        <option>Đầu tư</option>
+                        <option>Tư vấn tài chính</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>Loại Dự Án</label>
+                    <select>
+                        <option>Dự án đã hoàn thiện</option>
+                        <option>Dự án đang triển khai</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>Ngân Sách</label>
+                    <select>
+                        <option>Dưới 5 tỷ</option>
+                        <option>5 - 10 tỷ</option>
+                        <option>10 - 20 tỷ</option>
+                        <option>Trên 20 tỷ</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>Khu Vực Quan Tâm</label>
+                    <select>
+                        <option>TP. Thủ Đức</option>
+                        <option>Quận 1</option>
+                        <option>Quận 7</option>
+                        <option>Bình Thạnh</option>
+                        <option>Nhà Bè</option>
+                    </select>
+                </div>
+
+                <div class="form-group full">
+                    <label>Yêu Cầu Thêm</label>
+
+                    <textarea rows="5"
+                        placeholder="Ví dụ: cần gần trung tâm, view sông, full nội thất, hỗ trợ vay..."></textarea>
+                </div>
+
+                <button type="submit" class="submit-btn">
+                    Gửi Yêu Cầu Tư Vấn
+                </button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+    <script>
+        document
+            .getElementById("consultForm")
+            .addEventListener("submit", function (e) {
+
+                e.preventDefault();
+
+                alert("Đăng ký tư vấn thành công!");
+
+                this.reset();
+            });
+    </script>
+
+</body>
+
+</html>

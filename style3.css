@@ -1,0 +1,670 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --gold: #B8972A;
+    --gold-light: #D4AF37;
+    --dark: #1a1a1a;
+    --text: #333;
+    --muted: #777;
+    --bg-light: #F5F4F0;
+    --white: #ffffff;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    color: var(--text);
+    background: var(--white);
+    overflow-x: hidden;
+}
+
+/* ── NAVBAR ── */
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 48px;
+    height: 68px;
+    background: rgba(255, 255, 255, 0.97);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.nav-logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 17px;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--dark);
+}
+
+.nav-links {
+    display: flex;
+    gap: 36px;
+    list-style: none;
+    align-items: center;
+}
+
+.nav-links a {
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--dark);
+    transition: color .2s;
+}
+
+.nav-links a.active {
+    color: var(--gold);
+}
+
+.nav-links a:hover {
+    color: var(--gold);
+}
+
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+}
+
+.nav-icons {
+    display: flex;
+    gap: 14px;
+    align-items: center;
+    color: var(--dark);
+    font-size: 16px;
+}
+
+.nav-icons svg {
+    cursor: pointer;
+    opacity: .75;
+    transition: opacity .2s;
+}
+
+.nav-icons svg:hover {
+    opacity: 1;
+}
+
+.btn-cta {
+    background: var(--gold);
+    color: #fff;
+    border: none;
+    padding: 11px 22px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background .2s, transform .15s;
+}
+
+.btn-cta:hover {
+    background: #9a7d20;
+    transform: translateY(-1px);
+}
+
+/* --- HEADER BLOCK (Xử lý chia đôi tiêu đề và mô tả không bị dính) --- */
+.contact-header-block, .experts-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 70px;
+    gap: 40px;
+}
+
+.title-left {
+    flex: 1;
+}
+
+.desc-right {
+    flex: 1;
+    max-width: 480px;
+    font-size: 0.95rem;
+    color: #555;
+    font-weight: 300;
+    padding-bottom: 5px;
+}
+
+.section-label {
+    font-size: 0.7rem;
+    letter-spacing: 3px;
+    color: #999;
+    font-weight: 600;
+    display: block;
+    margin-bottom: 15px;
+}
+
+h1, h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 3.2rem;
+    font-weight: 400;
+    line-height: 1.2;
+    color: #000;
+}
+
+/* --- CONTACT GRID LAYOUT --- */
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 100px; /* Tạo khoảng trống rộng giữa thông tin và form */
+    margin-bottom: 100px;
+}
+
+.info-column {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.info-block h3 {
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 12px;
+}
+
+.highlight-text {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.4rem;
+    font-weight: 600;
+    color: #000;
+}
+
+.sub-text {
+    font-size: 0.8rem;
+    color: #777;
+    margin-top: 4px;
+}
+
+.main-text {
+    font-size: 0.9rem;
+    color: #444;
+}
+
+.note {
+    font-style: italic;
+    color: #888;
+}
+
+.map-wrapper {
+    margin-top: 15px;
+}
+
+.map-link {
+    display: inline-block;
+    margin-top: 10px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: #000;
+}
+
+/* --- PREMIUM FORM --- */
+.form-column {
+    background: #fff;
+}
+
+.premium-form {
+    display: flex;
+    flex-direction: column;
+    gap: 30px; /* Giúp các ô nhập liệu cách nhau thông thoáng */
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.form-group label {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: #000;
+    letter-spacing: 1px;
+}
+
+.premium-form input, 
+.premium-form textarea,
+.premium-form select {
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid #dbdbdb;
+    padding: 12px 0;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.9rem;
+    color: #000;
+    background: transparent;
+    transition: border-color 0.3s;
+}
+
+.premium-form input:focus, 
+.premium-form textarea:focus,
+.premium-form select:focus {
+    outline: none;
+    border-bottom-color: #000;
+}
+
+.select-wrapper {
+    position: relative;
+}
+
+.select-wrapper::after {
+    content: "↓";
+    font-size: 0.8rem;
+    position: absolute;
+    right: 5px;
+    top: 12px;
+    color: #666;
+    pointer-events: none;
+}
+
+.premium-form select {
+    appearance: none;
+    -webkit-appearance: none;
+}
+
+.btn-submit-premium {
+    background: #000;
+    color: #fff;
+    border: none;
+    padding: 18px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: opacity 0.3s;
+}
+
+.btn-submit-premium:hover {
+    opacity: 0.9;
+}
+
+/* --- EXPERTS SECTION --- */
+.experts-section {
+    padding: 100px 0;
+    border-top: 1px solid #f0f0f0;
+}
+
+.experts-list {
+    display: flex;
+    flex-direction: column;
+    gap: 120px;
+}
+
+.expert-row {
+    display: grid;
+    grid-template-columns: 4.5fr 6.5fr;
+    gap: 80px;
+    align-items: center;
+}
+
+.expert-row.reverse {
+    grid-template-columns: 6.5fr 4.5fr;
+}
+
+.expert-img-box {
+    height: 440px;
+    overflow: hidden;
+}
+
+.expert-img-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.expert-info-box {
+    display: flex;
+    flex-direction: column;
+}
+
+.expert-tag {
+    font-size: 0.65rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+    color: #888;
+    margin-bottom: 12px;
+}
+
+.expert-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.4rem;
+    font-weight: 400;
+    color: #000;
+    margin-bottom: 20px;
+}
+
+.expert-bio {
+    font-size: 0.9rem;
+    color: #555;
+    margin-bottom: 25px;
+    font-weight: 300;
+    line-height: 1.8;
+}
+
+.expert-meta {
+    border-top: 1px solid #eee;
+    padding-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    font-size: 0.8rem;
+    color: #666;
+}
+
+.expert-link {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: #000;
+    text-decoration: none;
+}
+
+/* --- LUXURY QUOTE SECTION --- */
+.luxury-quote-section {
+    background-color: #f9f9f9;
+    padding: 120px 20px;
+    text-align: center;
+}
+
+.quote-container {
+    max-width: 750px;
+    margin: 0 auto;
+}
+
+.quote-mark {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 5rem;
+    color: #ccc;
+    display: block;
+    line-height: 0.1;
+    margin-bottom: 30px;
+}
+
+.quote-text {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 1.6rem;
+    color: #111;
+    line-height: 1.6;
+    margin-bottom: 30px;
+}
+
+.quote-author {
+    font-size: 0.75rem;
+    letter-spacing: 3px;
+    color: #777;
+    font-weight: 500;
+}
+
+/* --- FOOTER ĐEN --- */
+footer {
+    padding: 80px 20px 40px 20px;
+    text-align: center;
+    background-color: #0b0c0d;
+    color: #fff;
+}
+
+.footer-logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.2rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+    margin-bottom: 30px;
+}
+
+.footer-links {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    gap: 40px;
+    margin-bottom: 35px;
+}
+
+.footer-links a {
+    text-decoration: none;
+    color: #999;
+    font-size: 0.75rem;
+    letter-spacing: 1px;
+    transition: color 0.3s;
+}
+
+.footer-links a:hover {
+    color: #fff;
+}
+
+.footer-copy {
+    font-size: 0.7rem;
+    color: #555;
+}
+
+/* --- ANIMATION REVEAL --- */
+.reveal {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.8s ease;
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* RESPONSIVE TRÁNH LỖI TRÊN ĐIỆN THOẠI */
+@media (max-width: 992px) {
+    .contact-header-block, .experts-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+    .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 60px;
+    }
+    .expert-row, .expert-row.reverse {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+    .expert-img-box {
+        height: 320px;
+    }
+    h1, h2 {
+        font-size: 2.5rem;
+    }
+}
+
+/* SỬA LỖI KHỐI CHUYÊN GIA TRÊN INDEX3 */
+.expert-row {
+    display: grid !important;
+    grid-template-columns: 4.5fr 6.5fr !important;
+    gap: 50px !important;
+    align-items: start !important;
+    margin-bottom: 60px !important;
+}
+.expert-row.reverse {
+    grid-template-columns: 6.5fr 4.5fr !important;
+}
+.expert-img-box {
+    width: 100% !important;
+    height: auto !important;
+    aspect-ratio: 4 / 5 !important;
+}
+.expert-img-box img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+}
+/* Khi kéo trình duyệt nhỏ lại */
+@media (max-width: 992px) {
+    .expert-row, .expert-row.reverse {
+        grid-template-columns: 1fr !important;
+        gap: 25px !important;
+    }
+    .expert-img-box {
+        max-width: 400px !important;
+        margin: 0 auto !important;
+    }
+}
+/* CĂN LỀ TRÁI/PHẢI THẲNG HÀNG VỚI MENU TRANG INDEX3 */
+.experts-section, .luxury-quote-section {
+    max-width: 1440px !important;
+    margin: 0 auto !important;
+    padding-left: 48px !important;
+    padding-right: 48px !important;
+}
+
+/* Đảm bảo danh sách căn lề chuẩn */
+.experts-list {
+    width: 100% !important;
+}
+/* ── CĂN LỀ CHUẨN ĐỂ ĐỒNG BỘ NỘI DUNG ── */
+.main-container {
+    width: 100%;
+    max-width: 1440px;      /* Giới hạn độ rộng tối đa */
+    margin: 0 auto;         /* Căn giữa trang web */
+    padding: 0 80px;        /* Lề trái/phải 80px (tạo không gian sang trọng) */
+    box-sizing: border-box;
+}
+
+/* Khoảng cách từ Menu xuống nội dung */
+main {
+    padding-top: 86px !important; 
+    padding-bottom: 83px !important;
+}
+
+/* Tối ưu hóa trên điện thoại */
+@media (max-width: 992px) {
+    .main-container {
+        padding: 0 24px;    /* Thu hẹp lề trên mobile để tận dụng diện tích */
+    }
+    main {
+        padding-top: 100px !important;
+    }
+}
+/* ── KHUNG CHỨA TRUNG TÂM (ĐẢM BẢO CĂN GIỮA TUYỆT ĐỐI) ── */
+.main-container {
+    width: 100%;
+    max-width: 1440px !important; /* Giới hạn độ rộng tối đa */
+    margin: 0 auto !important;    /* Tự động căn giữa màn hình */
+    padding: 0 48px !important;   /* Lề trái phải an toàn */
+    box-sizing: border-box;       /* Đảm bảo padding không làm vỡ khung */
+}
+
+/* Ép các section bên trong phải nằm trong container */
+.experts-section, .luxury-quote-section {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    margin: 0 auto !important;
+}
+
+/* Khoảng thở phía trên và dưới */
+main {
+    padding-top: 140px !important;
+    padding-bottom: 100px !important;
+}
+
+/* Responsive cho thiết bị nhỏ */
+@media (max-width: 992px) {
+    .main-container {
+        padding: 0 24px !important; /* Lề nhỏ hơn trên điện thoại */
+    }
+}
+/* =========================
+   RESPONSIVE NAVBAR
+========================= */
+
+@media (max-width: 992px){
+
+    nav{
+        padding: 0 20px;
+    }
+
+    .nav-links{
+        gap: 18px;
+    }
+
+    .nav-links a{
+        font-size: 11px;
+    }
+
+    .btn-cta{
+        padding: 10px 14px;
+        font-size: 11px;
+    }
+}
+
+
+/* Mobile */
+@media (max-width: 768px){
+
+    nav{
+        height: auto;
+        padding: 14px 20px;
+        flex-wrap: wrap;
+        gap: 14px;
+    }
+
+    .nav-logo{
+        width: 100%;
+        text-align: center;
+    }
+
+    .nav-links{
+        width: 100%;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 14px;
+    }
+
+    .nav-right{
+        width: 100%;
+        justify-content: center;
+    }
+
+    .btn-cta{
+        width: 100%;
+        max-width: 220px;
+    }
+}
+
+
+/* Điện thoại nhỏ */
+@media (max-width: 480px){
+
+    .nav-links{
+        gap: 10px;
+    }
+
+    .nav-links a{
+        font-size: 10px;
+    }
+
+    .btn-cta{
+        font-size: 10px;
+        padding: 10px;
+    }
+
+    .nav-logo{
+        font-size: 14px;
+    }
+}
